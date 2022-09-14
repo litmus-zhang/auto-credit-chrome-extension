@@ -1,0 +1,27 @@
+{
+  "name": "Metamask AutoCredit",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Auto credit metamask extension that connect to the metamask extension and credit the user with 0.1 ETH",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Metamask AutoCredit",
+    "default_popup": "popup.html"
+  }
+}
